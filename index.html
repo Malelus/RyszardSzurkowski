@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./img/icon.png" />
+    <title>Ryszard Szurkowski</title>
+  </head>
+  <body class="background">
+    <div class="transition transition--active slide-r-l"></div>
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo__text">Ryszard Szurkowski<i class="fas fa-biking logo__icon"></i></span>
+      </div>
+
+      <div class="nav-toggle">
+        <button class="hamburger">
+          <span class="hamburger__box"><span class="hamburger__inner"></span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="landing-bg"></div>
+
+    <main class="main">
+      <section class="menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a
+                href="./index.html"
+                class="nav__link nav__link--landing nav__link--landing--active"
+                title="Strona główna"
+                >Strona główna</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="./pages/biography.html" class="nav__link nav__link--landing" title="Życiorys">Życiorys</a>
+            </li>
+            <li class="nav__item">
+              <a href="./pages/successes.html" class="nav__link nav__link--landing" title="Sukcesy">Sukcesy</a>
+            </li>
+            <li class="nav__item">
+              <a
+                href="./pages/memoryClub.html"
+                class="nav__link nav__link--landing external"
+                target="_blank"
+                title="Klub pamięci"
+                >Klub pamięci</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="content">
+        <p class="content__text content__text--quote">
+          „Mówiłem mu, że gazety wspominają nasz wyczyn. Powiedział, że wie. Otworzył gazetę na tej stronie, wziął
+          długopis i napisał: Niczego nie żałuję. Rychu, naprawdę niczego nie żałuję.“ -
+          <span class="bold">Ryszard Szurkowski</span>
+        </p>
+      </section>
+    </main>
+
+    <button class="btn btn--scrollUp scrollUp" id="scrollUp">
+      <i class="fas fa-arrow-circle-up btn btn--icon btn--icon--rounded"></i>
+    </button>
+
+    <footer class="footer">
+      <button class="btn btn--outer btn--about show-popup" data-target="#about_page">
+        <i class="fas fa-info-circle btn btn--info btn--icon"></i> O stronie
+      </button>
+      <p class="footer__text">2021 &copy Mateusz Narowski 3Bi</p>
+    </footer>
+
+    <div class="popup" id="about_page">
+      <div class="popup__overlay show-popup" data-target="#about_page"></div>
+      <div class="popup__inner">
+        <p class="popup__title">Ryszard Szurkowski</p>
+        <p class="popup__text"><i class="fas fa-info popup__icon"></i> - Strona o Ryszardzie Szurkowskim.</p>
+        <p class="popup__text">
+          <i class="fab fa-wpforms popup__icon"></i> - Posiada formularz zapisu do klubu pamięci.<a
+            href="./pages/memoryClub.html"
+            class="popup__link external"
+            target="_blank"
+            title="Zapisz Się!"
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </p>
+        <p class="popup__text">
+          <i class="fab fa-github popup__icon"></i> - Strona została umieszczona również na repozytorium GitHub'a.<a
+            href="https://github.com/Malelus/RyszardSzurkowski"
+            class="popup__link external"
+            target="_blank"
+            title="github.com/Malelus/RyszardSzurkowski"
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </p>
+        <p class="popup__subtitle">Autor: Mateusz Narowski</p>
+        <p class="popup__text"><i class="fas fa-circle popup__icon popup__circle"></i> Klasa: 3Bi</p>
+        <p class="popup__text"><i class="fas fa-circle popup__icon popup__circle"></i> Grupa: I</p>
+        <p class="popup__text"><i class="far fa-calendar-alt popup__icon"></i> - 23.02.2021r.</p>
+        <span>
+          <button class="btn btn--inner btn--about show-popup" data-target="#about_page">
+            <i class="fas fa-times btn btn--close btn--icon"></i> Zamknij
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <script src="./addons/main.js"></script>
+  </body>
+</html>

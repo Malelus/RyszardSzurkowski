@@ -1,0 +1,251 @@
+//==============================================//
+//===// Responsive layout - mobile section //===//
+//==============================================//
+
+@include mobile {
+  //================//
+  //===// Body //===//
+  //================//
+
+  //===// Body > Background Image //===//
+
+  .background {
+    background-position-y: 5rem;
+  }
+
+  //====================//
+  //===// Reusable //===//
+  //====================//
+
+  //===// Scroll up //===//
+
+  .scrollUp {
+    left: 7.5px;
+  }
+
+  //==================//
+  //===// Header //===//
+  //==================//
+
+  header {
+    background: color(bg);
+  }
+
+  //===// Header > Logo//===//
+
+  .logo {
+    &__text {
+      font-size: 2rem;
+    }
+
+    &__icon {
+      font-size: 1.7rem;
+    }
+  }
+
+  //================//
+  //===// Main //===//
+  //================//
+
+  .main {
+    display: flex;
+  }
+
+  //===// Main > Background Bluring //===//
+
+  .landing-bg {
+    position: fixed;
+    height: 100%;
+    width: 30%;
+    top: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+  }
+
+  .form-bg {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+
+    &--default {
+      width: 30%;
+      left: 0;
+      backdrop-filter: none;
+      background: color(bg);
+    }
+
+    &--mobile {
+      width: 70%;
+      right: 0;
+      backdrop-filter: blur(6px);
+    }
+  }
+
+  //===// Main > Menu //===//
+
+  .menu {
+    flex: 30%;
+  }
+
+  .nav {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    animation: none;
+
+    &-toggle {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      height: 70vh;
+      background: transparent;
+      margin: 0 0 5em 0;
+    }
+
+    &__item {
+      margin: 0;
+    }
+
+    &__link {
+      color: color(txt);
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding: 0.75em 0;
+
+      &--landing {
+        color: color(accent);
+        font-weight: 700;
+
+        &--active {
+          color: color(txt-accent);
+          text-decoration: none;
+        }
+      }
+
+      &--active {
+        color: color(accent);
+        text-decoration: none;
+      }
+    }
+  }
+
+  //===// Main > Content //===//
+
+  .content {
+    flex: 70%;
+
+    &__container {
+      margin-top: 3rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__text {
+      font-size: 1.125rem;
+
+      &--quote {
+        left: 80%;
+        width: 50%;
+        font-size: 1.275rem;
+        transform: translate(-80%, -75%);
+      }
+    }
+
+    & .form {
+      &__label {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  //==================//
+  //===// Footer //===//
+  //==================//
+
+  //===// Footer > Content //===//
+
+  .footer {
+    &__text {
+      font-size: 1.15rem;
+    }
+  }
+
+  //==================//
+  //===// Assets //===//
+  //==================//
+
+  //===// Buttons //===//
+
+  .btn {
+    &--scrollUp {
+      font-size: 2.5rem;
+    }
+
+    &--outer {
+      font-size: 1rem;
+    }
+
+    &--inner {
+      font-size: 1.175rem;
+    }
+
+    &--form {
+      font-size: 1.35rem;
+    }
+  }
+
+  //===// Popup //===//
+
+  .popup {
+    &__title {
+      &--first {
+        font-size: 2.1rem;
+      }
+
+      &--second {
+        font-size: 1.1rem;
+      }
+
+      &--icon {
+        font-size: 1.1rem;
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+
+    &__text {
+      font-size: 1.35rem;
+
+      & + & {
+        margin-top: 0.5em;
+      }
+
+      &:last-of-type {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    &__link {
+      font-size: 1.175rem;
+      margin-left: 0.25em;
+    }
+
+    &__circle {
+      top: 55%;
+      font-size: 0.5rem;
+      transform: translateY(-55%);
+    }
+  }
+}

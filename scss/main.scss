@@ -1,0 +1,356 @@
+//=================================================================================//
+//===// Importing page default styling reset, variables, assets & transitions //===//
+//=================================================================================//
+
+@import './reset', './functions', './variables', './assets', './transitions';
+
+//===========================================================//
+//===// Setting default page styling & scrollbar (Body) //===//
+//===========================================================//
+
+body {
+  background: color(bg);
+  color: color(txt);
+  font-family: font(txt);
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: color(bg);
+    margin: 0.08rem 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color(accent);
+    border: 2.75px solid color(bg);
+    border-radius: 10px;
+  }
+}
+
+//===// Body > Background Image //===//
+
+.background {
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: 4rem;
+}
+
+//====================//
+//===// Reusable //===//
+//====================//
+
+//===// Container //===//
+
+.container {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+//===// Text decoration //===//
+
+.bold {
+  font-weight: 600;
+}
+
+//===// Scroll up //===//
+
+.scrollUp {
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  background: transparent;
+  box-shadow: none;
+  transition: all time(btn-anim-time) ease;
+
+  &.scrollUp--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+//==================//
+//===// Header //===//
+//==================//
+
+header {
+  position: relative;
+  z-index: 3;
+  padding: 1rem 0;
+}
+
+//===// Header > Logo //===//
+
+.logo {
+  text-align: center;
+  font-weight: 600;
+
+  &__text {
+    display: inline-block;
+    font-size: 1.45rem;
+    font-family: font(txt);
+    font-weight: 500;
+    animation: logo__text-anim time(logo-anim-time) time(anim-delay) ease forwards;
+  }
+
+  &__icon {
+    opacity: 0;
+    font-size: 1.15rem;
+    font-family: font(fa);
+    margin-left: 0.15em;
+    animation: logo__icon-anim time(logo-anim-time) time(anim-delay--logo-icon) ease forwards;
+  }
+}
+
+//================//
+//===// Main //===//
+//================//
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+//===// Main > Background Bluring //===//
+
+.form-bg {
+  position: absolute;
+  height: calc(100vh - 4rem);
+  top: 4rem;
+  bottom: 0;
+
+  &--default {
+    width: 100%;
+    left: 0;
+    backdrop-filter: blur(6px);
+  }
+}
+
+//===// Main > Menu //===//
+
+.nav {
+  &-toggle {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 100%;
+  margin: 0 0 2em 0;
+  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.16);
+  animation: nav-anim-first time(nav-hide-time) ease-in-out;
+
+  &--visibility {
+    position: relative;
+    pointer-events: all;
+    height: auto;
+    animation: nav-anim-second time(nav-show-time) ease-in-out forwards;
+  }
+
+  &__list {
+    position: relative;
+    z-index: 4;
+    background: color(accent);
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  &__item {
+    & + & {
+      margin: 0.35em 0 0 0;
+    }
+  }
+
+  &__link {
+    color: color(txt-accent);
+    font-size: 1.15rem;
+    font-family: font(txt);
+    font-weight: 600;
+    text-decoration: none;
+    text-underline-offset: 3.5px;
+    transition: opacity time(btn-anim-time) ease;
+
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+    @include mouse-hover;
+
+    &--landing {
+      color: color(txt-accent);
+    }
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}
+
+//===// Main > Content //===//
+
+.content {
+  position: relative;
+  margin: 2.5rem 0 6.5rem 0;
+
+  &__photo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    pointer-events: none;
+    outline: 1px solid color(bg);
+    outline-offset: -1px;
+
+    &-inner {
+      position: relative;
+      left: 10%;
+      transform: translateX(-10%);
+      margin: 1.5em 0;
+    }
+  }
+
+  &__title {
+    color: color(txt);
+    text-align: center;
+    font-family: font(txt);
+    margin: 1.5em 0 0.85em 0;
+  }
+
+  &__text {
+    text-align: justify;
+    letter-spacing: 0.25px;
+    font-size: 1rem;
+    font-family: font(txt);
+    font-weight: 400;
+
+    & + & {
+      margin-top: 1.5em;
+    }
+
+    &--quote {
+      position: fixed;
+      top: 75%;
+      left: 60%;
+      width: 90%;
+      max-width: 40ch;
+      transform: translate(-60%, -75%);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      color: color(bg);
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 200;
+      padding: 0.5em 1em;
+    }
+  }
+
+  & .form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2em 0;
+
+    &__title {
+      color: color(txt-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 900;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &__label,
+    &__input {
+      display: block;
+    }
+
+    &__label {
+      color: color(txt-accent);
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-size: 1rem;
+      margin: 1.2em 0 0.6em 0;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+
+    &__input {
+      width: 300px;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      font-family: font(txt);
+      font-weight: 400;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      margin: 0 auto;
+      padding: 0.3em 0.5em;
+      box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &__result {
+      opacity: 0;
+      visibility: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      color: color(txt-accent);
+      letter-spacing: 1.2px;
+      text-align: center;
+      font-weight: 900;
+      padding: 0.5em 1em;
+      transform: translateY(-100px);
+
+      &--true {
+        animation: form__result-anim time(form-result-visibility) ease;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+//==================//
+//===// Footer //===//
+//==================//
+
+footer {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: baseline;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  background: color(accent);
+  padding: 0.25em 1.5em 0.55em 1.5em;
+  box-shadow: 0px -5px 6px rgba(0, 0, 0, 0.16);
+}
+
+//===// Footer > Content //===//
+
+.footer {
+  &__text {
+    color: color(bg);
+    font-family: font(bg);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+//==========================================================//
+//===// Importing responisve layout (mobile & desktop) //===//
+//==========================================================//
+
+@import './mobile', './desktop';
