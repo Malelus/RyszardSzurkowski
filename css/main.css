@@ -60,7 +60,7 @@ img {
   --transition-time: 0.25s;
   --btn-anim-time: 0.2s;
   --popup-time: 0.4s;
-  --logo-anim-time: 0.85s;
+  --logo-anim-time: 0.9s;
   --nav-hide-time: 0.35s;
   --nav-show-time: 0.5s;
   --main-anim-time: ;
@@ -627,8 +627,8 @@ header {
   font-weight: 500;
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
-  -webkit-animation: logo__text-anim 0.85s 0.4s ease forwards;
-          animation: logo__text-anim 0.85s 0.4s ease forwards;
+  -webkit-animation: logo__text-anim 0.9s 0.4s ease forwards;
+          animation: logo__text-anim 0.9s 0.4s ease forwards;
 }
 
 .logo__icon {
@@ -636,8 +636,8 @@ header {
   font-size: 1.15rem;
   font-family: "Font Awesome 5 Free";
   margin-left: 0.15em;
-  -webkit-animation: logo__icon-anim 0.85s 1.15s ease forwards;
-          animation: logo__icon-anim 0.85s 1.15s ease forwards;
+  -webkit-animation: logo__icon-anim 0.9s 1.15s ease forwards;
+          animation: logo__icon-anim 0.9s 1.15s ease forwards;
 }
 
 main {
