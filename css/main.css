@@ -60,13 +60,13 @@ img {
   --transition-time: 0.25s;
   --btn-anim-time: 0.2s;
   --popup-time: 0.4s;
-  --logo-anim-time: 1s;
+  --logo-anim-time: 0.85s;
   --nav-hide-time: 0.35s;
   --nav-show-time: 0.5s;
   --main-anim-time: ;
   --form-result-visibility: 8s;
   --anim-delay: 0.4s;
-  --anim-delay--logo-icon: 1.25s;
+  --anim-delay--logo-icon: 1.15s;
 }
 
 .btn {
@@ -344,8 +344,8 @@ img {
 
 @-webkit-keyframes logo__text-anim {
   0% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -355,8 +355,8 @@ img {
 
 @keyframes logo__text-anim {
   0% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -625,8 +625,10 @@ header {
   font-size: 1.45rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  -webkit-animation: logo__text-anim 1s 0.4s ease forwards;
-          animation: logo__text-anim 1s 0.4s ease forwards;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-animation: logo__text-anim 0.85s 0.4s ease forwards;
+          animation: logo__text-anim 0.85s 0.4s ease forwards;
 }
 
 .logo__icon {
@@ -634,8 +636,8 @@ header {
   font-size: 1.15rem;
   font-family: "Font Awesome 5 Free";
   margin-left: 0.15em;
-  -webkit-animation: logo__icon-anim 1s 1.25s ease forwards;
-          animation: logo__icon-anim 1s 1.25s ease forwards;
+  -webkit-animation: logo__icon-anim 0.85s 1.15s ease forwards;
+          animation: logo__icon-anim 0.85s 1.15s ease forwards;
 }
 
 main {

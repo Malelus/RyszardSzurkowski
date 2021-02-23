@@ -98,6 +98,7 @@ header {
     font-size: 1.45rem;
     font-family: font(txt);
     font-weight: 500;
+    transform: translateY(-100px);
     animation: logo__text-anim time(logo-anim-time) time(anim-delay) ease forwards;
   }
 
